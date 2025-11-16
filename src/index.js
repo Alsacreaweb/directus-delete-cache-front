@@ -1,3 +1,5 @@
+import fs from "fs";
+
 export default function registerHook({ action }, { env, logger }) {
   const mapCollectionsToCacheKeys = {
     information_general: "/items/information_general",

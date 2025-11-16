@@ -2,7 +2,7 @@
   "name": "delete-cache-front",
   "description": "A Directus hook extension that clears the front-end cache when items are created, updated, or deleted.",
   "icon": "extension",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "directus",
     "directus-extension",
