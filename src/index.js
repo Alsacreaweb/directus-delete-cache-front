@@ -12,6 +12,7 @@ export default function registerHook({ action }, { env, logger }) {
     nos_spectacles: "/items/nos_spectacles",
     date_de_spectacles: "/items/date_de_spectacles",
     les_artistes: "/items/les_artistes",
+    page_chanson: "/items/page_chanson",
   };
 
   const événements = ["items.create", "items.update", "items.delete"];
