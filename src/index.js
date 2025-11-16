@@ -14,6 +14,12 @@ export default function registerHook({ action }, { env, logger }) {
 
   const événements = ["items.create", "items.update", "items.delete"];
 
+  const NEXT_CACHE_SECRET =
+    process.env.NEXT_CACHE_SECRET ??
+    fs
+      .readFileSync("/run/secrets/LESDEMUSELEES-UAT-NEXT_CACHE_SECRET", "utf8") // Is't for Docker secret management
+      .trim();
+
   const purgeCache = async (cacheKey) => {
     try {
       console.log(
@@ -23,7 +29,7 @@ export default function registerHook({ action }, { env, logger }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${env.NEXT_CACHE_SECRET}`,
+          Authorization: `Bearer ${NEXT_CACHE_SECRET}`,
         },
         body: JSON.stringify({ key: cacheKey }),
       });
